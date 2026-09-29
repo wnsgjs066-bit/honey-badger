@@ -240,10 +240,17 @@ a{color:var(--ink);text-decoration:none}
 
 /* ---------- responsive ---------- */
 @media (max-width:1080px){
+  #hb-game{height:auto;overflow:visible}
+  .s-sticker.a{display:none}
+  .s-hero .s-wrap{grid-template-columns:minmax(0,1fr) 440px;gap:36px;align-items:start}
+}
+@media (max-width:900px){
   .s-hero .s-wrap{grid-template-columns:minmax(0,1fr);padding-block:36px 72px}
+  .s-facts,.s-cta,.s-point{display:none}
+  .s-copy{gap:16px}
   .s-console{max-width:520px;width:100%;margin:0 auto}
-  .s-point .right{display:none}
-  .s-point .down{display:inline}
+}
+@media (max-width:1080px){
   .s-anim{grid-template-columns:minmax(0,1fr)}
   .s-eps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
   .s-comics{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -252,6 +259,12 @@ a{color:var(--ink);text-decoration:none}
 }
 @media (max-width:760px){
   :root{--nav-h:64px}
+  /* phone: the test is the first thing after one short headline */
+  .s-hero .s-wrap{padding-block:18px 56px;gap:18px}
+  .s-copy{gap:12px}
+  .s-copy h1{font-size:clamp(34px,10vw,44px);line-height:1.08}
+  .s-hero .s-lead,.s-facts,.s-cta,.s-point{display:none}
+  .s-console-top{padding:2px 6px 8px;font-size:13px}
   .s-links{display:none}
   .s-logo i{width:40px;height:40px}
   .s-logo b{font-size:21px}
@@ -307,14 +320,16 @@ a{color:var(--ink);text-decoration:none}
 #hb-game .muted{color:var(--ink-3)}
 @keyframes hbg-rise{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}
 #hb-game .intro{position:relative;padding:22px 20px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
-#hb-game .intro h1{font-size:clamp(34px,10vw,50px);letter-spacing:-.01em}
+#hb-game .intro h1{font-size:clamp(32px,9vw,48px);letter-spacing:-.01em}
+#hb-game .go{min-height:66px;font-size:22px;flex-direction:column;gap:2px;margin-top:2px}
+#hb-game .go .go-sub{font-family:var(--body);font-size:13px;color:var(--honey-2);letter-spacing:.02em}
 #hb-game .intro h1 .mk{background:linear-gradient(transparent 58%,var(--honey) 58%,var(--honey) 92%,transparent 92%)}
 #hb-game .intro-art{position:relative;height:190px;border:3px solid var(--ink);border-radius:18px;background:var(--sky-2);overflow:hidden}
 #hb-game .intro-art .ground{position:absolute;left:0;right:0;bottom:0;height:46px;background:var(--grass);border-top:3px solid var(--ink)}
-#hb-game .intro-art img{position:absolute;bottom:30px;height:140px}
+#hb-game .intro-art img{position:absolute;bottom:30px;height:118px}
 #hb-game .intro-art .a{left:12%;transform-origin:50% 100%;animation:hbg-waddle 1s ease-in-out infinite}
-#hb-game .intro-art .b{right:10%;height:128px}
-#hb-game .intro-art .bubble{position:absolute;left:50%;top:16px;transform:translateX(-50%)}
+#hb-game .intro-art .b{right:10%;height:106px}
+#hb-game .intro-art .bubble{position:absolute;left:50%;top:8px;transform:translateX(-50%);font-size:16px;padding:5px 12px}
 @keyframes hbg-waddle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) translateY(-4px)}}
 #hb-game .bubble{position:relative;display:inline-block;background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:7px 14px;font-family:var(--hand);font-weight:700;font-size:18px;line-height:1.2;white-space:nowrap}
 #hb-game .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
@@ -322,7 +337,9 @@ a{color:var(--ink);text-decoration:none}
 #hb-game .fact b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(16px,4.6vw,20px);line-height:1.1}
 #hb-game .fact span{font-size:12px;color:var(--ink-3)}
 #hb-game .types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-#hb-game .types span{display:flex;align-items:center;gap:8px;padding:8px 10px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);font-size:14px;line-height:1.25}
+#hb-game .types .t{display:flex;align-items:center;gap:10px;padding:9px 12px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);line-height:1.25}
+#hb-game .types .t b{display:block;font-family:var(--display);font-weight:400;font-size:16px}
+#hb-game .types .t small{display:block;font-size:13px;color:var(--ink-3)}
 #hb-game .types i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);flex:none}
 #hb-game .qtop{display:flex;align-items:center;gap:12px}
 #hb-game .qtop .back{min-height:44px;padding:8px 14px;font-size:15px;box-shadow:3px 3px 0 var(--ink)}
@@ -393,7 +410,6 @@ a{color:var(--ink);text-decoration:none}
     <nav class="s-links" aria-label="주요 메뉴">
       <a href="#play">화 성향 테스트</a><a href="#comfort">위로 카드</a><a href="#animation">애니메이션</a><a href="#comics">만화</a><a href="#brand">브랜드</a>
     </nav>
-    <a class="s-btn s-btn-dark" href="#hb-game">테스트 하기</a>
   </div>
 </header>
 
@@ -433,6 +449,7 @@ a{color:var(--ink);text-decoration:none}
       <span class="eyebrow">벌꿀오소리 · 약 1분</span>
       <h1>나의 <span class="mk">화 성향</span><br>테스트</h1>
       <p class="muted" id="intro-text"></p>
+      <button class="btn btn-dark btn-block go" id="btn-go" type="button">테스트 시작하기 <span class="go-sub">8문항 · 약 1분</span></button>
       <div class="intro-art" aria-hidden="true">
         <span class="bubble">너는 어떤 타입이야?</span>
         <div class="ground"></div>
@@ -446,7 +463,6 @@ a{color:var(--ink);text-decoration:none}
       </div>
       <div class="types" id="type-list"></div>
     </div>
-    <button class="btn btn-dark btn-block" id="btn-go" type="button">테스트 시작하기</button>
     <p class="foot">재미로 보는 테스트예요. 진단이나 검사가 아니에요.</p>
   </section>
 
@@ -731,7 +747,7 @@ a{color:var(--ink);text-decoration:none}
   $('#intro-text').textContent = T.intro;
   $('#type-list').innerHTML = ORDER.map(function (k) {
     var t = T.types[k];
-    return '<span><i style="background:' + t.color + '"></i><span><b style="font-family:var(--display);font-weight:400">' + esc(t.name) + '</b><br>' + esc(t.tag) + '</span></span>';
+    return '<div class="t"><i style="background:' + t.color + '"></i><div><b>' + esc(t.name) + '</b><small>' + esc(t.tag) + '</small></div></div>';
   }).join('');
 
   /* ---------- questions ---------- */

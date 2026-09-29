@@ -64,14 +64,16 @@ p{margin:0}
 
 /* intro */
 .intro{position:relative;padding:22px 20px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
-.intro h1{font-size:clamp(34px,10vw,50px);letter-spacing:-.01em}
+.intro h1{font-size:clamp(32px,9vw,48px);letter-spacing:-.01em}
+.go{min-height:66px;font-size:22px;flex-direction:column;gap:2px;margin-top:2px}
+.go .go-sub{font-family:var(--body);font-size:13px;color:var(--honey-2);letter-spacing:.02em}
 .intro h1 .mk{background:linear-gradient(transparent 58%,var(--honey) 58%,var(--honey) 92%,transparent 92%)}
 .intro-art{position:relative;height:190px;border:3px solid var(--ink);border-radius:18px;background:var(--sky-2);overflow:hidden}
 .intro-art .ground{position:absolute;left:0;right:0;bottom:0;height:46px;background:var(--grass);border-top:3px solid var(--ink)}
-.intro-art img{position:absolute;bottom:30px;height:140px}
+.intro-art img{position:absolute;bottom:30px;height:118px}
 .intro-art .a{left:12%;transform-origin:50% 100%;animation:waddle 1s ease-in-out infinite}
-.intro-art .b{right:10%;height:128px}
-.intro-art .bubble{position:absolute;left:50%;top:16px;transform:translateX(-50%)}
+.intro-art .b{right:10%;height:106px}
+.intro-art .bubble{position:absolute;left:50%;top:8px;transform:translateX(-50%);font-size:16px;padding:5px 12px}
 @keyframes waddle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) translateY(-4px)}}
 .bubble{position:relative;display:inline-block;background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:7px 14px;font-family:var(--hand);font-weight:700;font-size:18px;line-height:1.2;white-space:nowrap}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
@@ -79,7 +81,9 @@ p{margin:0}
 .fact b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(16px,4.6vw,20px);line-height:1.1}
 .fact span{font-size:12px;color:var(--ink-3)}
 .types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.types span{display:flex;align-items:center;gap:8px;padding:8px 10px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);font-size:14px;line-height:1.25}
+.types .t{display:flex;align-items:center;gap:10px;padding:9px 12px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);line-height:1.25}
+.types .t b{display:block;font-family:var(--display);font-weight:400;font-size:16px}
+.types .t small{display:block;font-size:13px;color:var(--ink-3)}
 .types i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);flex:none}
 
 /* question */
@@ -161,6 +165,7 @@ p{margin:0}
       <span class="eyebrow">벌꿀오소리 · 약 1분</span>
       <h1>나의 <span class="mk">화 성향</span><br>테스트</h1>
       <p class="muted" id="intro-text"></p>
+      <button class="btn btn-dark btn-block go" id="btn-go" type="button">테스트 시작하기 <span class="go-sub">8문항 · 약 1분</span></button>
       <div class="intro-art" aria-hidden="true">
         <span class="bubble">너는 어떤 타입이야?</span>
         <div class="ground"></div>
@@ -174,7 +179,6 @@ p{margin:0}
       </div>
       <div class="types" id="type-list"></div>
     </div>
-    <button class="btn btn-dark btn-block" id="btn-go" type="button">테스트 시작하기</button>
     <p class="foot">재미로 보는 테스트예요. 진단이나 검사가 아니에요.</p>
   </section>
 
@@ -232,7 +236,7 @@ p{margin:0}
   $('#intro-text').textContent = T.intro;
   $('#type-list').innerHTML = ORDER.map(function (k) {
     var t = T.types[k];
-    return '<span><i style="background:' + t.color + '"></i><span><b style="font-family:var(--display);font-weight:400">' + esc(t.name) + '</b><br>' + esc(t.tag) + '</span></span>';
+    return '<div class="t"><i style="background:' + t.color + '"></i><div><b>' + esc(t.name) + '</b><small>' + esc(t.tag) + '</small></div></div>';
   }).join('');
 
   /* ---------- questions ---------- */
