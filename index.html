@@ -28,7 +28,7 @@
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
+html{scroll-padding-top:calc(var(--nav-h) + 12px)}
 body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:var(--ink);text-decoration:none}
@@ -761,6 +761,29 @@ a{color:var(--ink);text-decoration:none}
 
 <script src="data.js"></script>
 <script>
+/* ---------- site: open at the top (or at the #section in the link), never somewhere else ---------- */
+(function () {
+  // In-app browsers (KakaoTalk etc.) restore an old scroll position or jump to a hash before
+  // images and fonts have loaded, which lands the page in the wrong section. Take over:
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+  var touched = false;
+  ['touchstart', 'wheel', 'keydown', 'mousedown'].forEach(function (t) {
+    window.addEventListener(t, function () { touched = true; }, { passive: true, once: true });
+  });
+  function settle() {
+    if (touched) return;
+    var id = decodeURIComponent(location.hash.slice(1));
+    var el = id && document.getElementById(id);
+    if (el) el.scrollIntoView({ block: 'start' }); else window.scrollTo(0, 0);
+  }
+  settle();
+  document.addEventListener('DOMContentLoaded', settle);
+  window.addEventListener('load', function () {
+    settle();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
+  });
+})();
+
 /* ---------- site: comfort card draw, animation placeholder, notify form ---------- */
 (function () {
   var D = window.GAME_DATA;
