@@ -107,13 +107,13 @@ a{color:var(--ink);text-decoration:none}
 .s-comfort .s-eyebrow{align-self:center}
 .s-comfort .s-lead{color:var(--sky-ink);margin-inline:auto}
 .s-deck{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,3vw,36px);width:100%;max-width:720px;margin:28px auto 0}
-.s-pick{appearance:none;background:none;border:0;padding:0;cursor:pointer;perspective:1200px;aspect-ratio:3/4.2;width:100%;max-width:100%;transition:transform .25s,opacity .4s,filter .4s}
+.s-pick{position:relative;display:block;appearance:none;background:none;border:0;padding:0;cursor:pointer;perspective:1200px;aspect-ratio:3/4.2;width:100%;max-width:100%;transition:transform .25s,opacity .4s,filter .4s}
 .s-pick:nth-child(1){transform:rotate(-5deg)}
 .s-pick:nth-child(3){transform:rotate(5deg)}
 .s-pick:not(:disabled):hover{transform:translateY(-10px) rotate(0)}
 .s-pick:disabled{cursor:default}
 .s-pick.dim{opacity:.35;filter:saturate(.3)}
-.s-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,1.4,.5,1)}
+.s-inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,1.4,.5,1)}
 .s-pick.on .s-inner{transform:rotateY(180deg)}
 .s-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:3px solid var(--ink);border-radius:20px;box-shadow:5px 5px 0 var(--ink);overflow:hidden;display:flex;flex-direction:column}
 .s-back{background:var(--ink);color:var(--card);justify-content:center;align-items:center}
