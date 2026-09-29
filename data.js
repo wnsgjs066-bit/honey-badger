@@ -82,17 +82,17 @@ window.HB_DATA = {
   },
 
   /* 만화: 에피소드별 제목과 페이지 수. 그림은 comics/ep번호/1.webp, 2.webp … (목록 썸네일은 thumb.webp)
-     5·6화 제목은 원고에 적힌 제목이고, 나머지는 내용을 보고 붙인 임시 제목이에요. 자유롭게 바꾸세요. */
+     제목은 인스타그램에 올린 제목과 같아요. */
   comics: [
-    { no: 1, title: '새 취미가 생긴 후', pages: 7 },
-    { no: 2, title: '새로 이사 온 이웃', pages: 7 },
-    { no: 3, title: '새 옷 입은 비 오는 날', pages: 7 },
-    { no: 4, title: '지각한 아침', pages: 7 },
+    { no: 1, title: '화가 났다는 건 진심이었다는 증거', pages: 7 },
+    { no: 2, title: '남의 싸움에 피 흘리는 바보에게', pages: 7 },
+    { no: 3, title: '빡칠 때 빡치는 건 지극히 정상', pages: 7 },
+    { no: 4, title: '우아한 척은 어차피 오래 못가', pages: 7 },
     { no: 5, title: '예의는 개나 줘버린 너에게', pages: 7 },
     { no: 6, title: '싸울 가치도 없는 대상', pages: 6 },
-    { no: 7, title: '메뉴를 가리켰을 뿐인데', pages: 6 },
-    { no: 8, title: '기다리던 캠핑 날', pages: 7 },
-    { no: 9, title: '마트에서 생긴 일', pages: 6 }
+    { no: 7, title: '관심이 필요한 불쌍한 영혼', pages: 6 },
+    { no: 8, title: '계획은 망하라고 세우는 거지 뭐', pages: 7 },
+    { no: 9, title: '뇌가 청순하면 지구가 평평해진다', pages: 6 }
   ],
 
   cards: [
