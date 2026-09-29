@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="1분이면 끝나는 나의 화 성향 테스트. 화가 나는 건 당연해, 잘 풀면 돼. 벌꿀오소리가 알려 주는 나에게 맞는 화 푸는 법과 칭찬 카드.">
+<meta name="description" content="1분이면 끝나는 나의 화 성향 테스트와 벌꿀오소리 일상툰. 화가 나는 건 당연해, 잘 풀면 돼.">
 <meta property="og:title" content="벌꿀오소리 · 화가 나는 건 당연해. 잘 풀면 돼.">
-<meta property="og:description" content="1분이면 끝나는 나의 화 성향 테스트. 화가 나는 건 당연해, 잘 풀면 돼. 벌꿀오소리가 알려 주는 나에게 맞는 화 푸는 법과 칭찬 카드.">
+<meta property="og:description" content="1분이면 끝나는 나의 화 성향 테스트와 벌꿀오소리 일상툰. 화가 나는 건 당연해, 잘 풀면 돼.">
 <meta property="og:image" content="https://wnsgjs066-bit.github.io/honey-badger/img/sticker-surprise.webp">
 <meta name="theme-color" content="#FBF3E1">
 <link rel="icon" href="img/sticker-surprise.webp" type="image/webp">
@@ -159,17 +159,34 @@ a{color:var(--ink);text-decoration:none}
 .s-ep span{font-size:14px;color:#B9B2A2}
 
 /* comics */
-.s-comics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:40px}
-.s-comic{display:flex;flex-direction:column;background:var(--card);border:3px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .2s,box-shadow .2s}
+.s-comics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
+.s-comic{display:flex;flex-direction:column;background:var(--card);border:3px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .2s,box-shadow .2s;cursor:pointer;padding:0;text-align:left;font:inherit;color:inherit;scroll-margin-top:calc(var(--nav-h) + 16px)}
 .s-comic:hover{transform:translate(-3px,-5px) rotate(-.6deg);box-shadow:9px 11px 0 var(--ink)}
-.s-comic .pic{position:relative;aspect-ratio:4/5;border-bottom:3px solid var(--ink)}
+.s-comic .pic{position:relative;display:block;width:100%;aspect-ratio:1/1;border-bottom:3px solid var(--ink);background:var(--card)}
 .s-comic .pic img{width:100%;height:100%;object-fit:cover}
-.s-comic .ep{position:absolute;top:12px;left:12px;font-family:var(--display);font-size:13px;background:var(--card);border:2px solid var(--ink);border-radius:999px;padding:4px 11px}
-.s-comic .ep.first{background:var(--honey)}
-.s-comic .stamp{position:absolute;right:10px;bottom:10px;width:80px;height:80px;border-radius:50%;border:3px solid var(--red);color:var(--red);background:rgba(255,253,247,.92);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--display);font-size:16px;line-height:1.1;transform:rotate(-12deg)}
-.s-comic .meta{padding:16px 18px 20px;display:flex;flex-direction:column;gap:4px}
-.s-comic .meta b{font-family:var(--display);font-weight:400;font-size:21px}
+.s-comic .ep{position:absolute;top:10px;left:10px;font-family:var(--display);font-size:14px;background:var(--honey);border:2px solid var(--ink);border-radius:999px;padding:4px 11px}
+.s-comic .meta{display:flex;flex-direction:column;gap:3px;padding:14px 16px 16px}
+.s-comic .meta b{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.25}
 .s-comic .meta span{font-size:14px;color:var(--ink-3)}
+/* comic viewer */
+.s-viewer{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:#1E1D1A;padding:calc(env(safe-area-inset-top,0px) + 10px) 0 calc(env(safe-area-inset-bottom,0px) + 12px)}
+.s-vtop{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 16px 10px;color:var(--card);max-width:760px;width:100%;margin:0 auto}
+.s-vtop small{display:block;font-family:var(--display);font-size:13px;letter-spacing:.1em;color:var(--honey)}
+.s-vtop b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(18px,4.6vw,24px);line-height:1.2}
+.s-vclose{flex:none;width:46px;height:46px;border-radius:50%;border:2.5px solid var(--card);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.s-track2{flex:1;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior:contain;scrollbar-width:none;outline:none}
+.s-track2::-webkit-scrollbar{display:none}
+.s-slide{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;padding:0 8px}
+.s-slide img{max-width:min(100%,720px);max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:10px;background:#fff}
+.s-slide.end{flex-direction:column;gap:14px;color:var(--card);text-align:center}
+.s-slide.end .s-btn{min-width:220px}
+.s-vbot{display:flex;align-items:center;justify-content:center;gap:14px;padding:12px 16px 0}
+.s-vnav{width:48px;height:48px;border-radius:50%;border:2.5px solid var(--ink);background:var(--honey);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--card)}
+.s-vnav:disabled{opacity:.35;cursor:default}
+.s-dots{display:flex;gap:7px}
+.s-dots i{width:9px;height:9px;border-radius:50%;background:#6B665B}
+.s-dots i.on{background:var(--honey);transform:scale(1.25)}
+.s-vcount{font-family:var(--display);font-size:15px;color:#D9D3C4;min-width:48px;text-align:center;font-variant-numeric:tabular-nums}
 .s-notify{position:relative;margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--honey);border:3px solid var(--ink);border-radius:26px;padding:26px 32px 26px 190px;box-shadow:6px 6px 0 var(--ink)}
 .s-notify > img{position:absolute;left:30px;bottom:-3px;height:160px}
 .s-notify h3{margin:0;font-family:var(--display);font-weight:400;font-size:26px;line-height:1.2}
@@ -253,7 +270,7 @@ a{color:var(--ink);text-decoration:none}
 @media (max-width:1080px){
   .s-anim{grid-template-columns:minmax(0,1fr)}
   .s-eps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-  .s-comics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .s-comics{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
   .s-bgrid,.s-bgrid2{grid-template-columns:minmax(0,1fr)}
   .s-pig{display:none}
 }
@@ -273,10 +290,15 @@ a{color:var(--ink);text-decoration:none}
   #hb-game{height:auto;overflow:visible;border-radius:16px}
   #hb-game .hud{top:calc(env(safe-area-inset-top,0px) + var(--nav-h))}
   .s-eps{grid-template-columns:minmax(0,1fr)}
-  .s-comics{gap:14px}
+  .s-comics{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:28px}
+  .s-comic{flex-direction:row;align-items:stretch;border-radius:18px;box-shadow:4px 4px 0 var(--ink)}
+  .s-comic:hover{transform:none;box-shadow:4px 4px 0 var(--ink)}
+  .s-comic .pic{width:104px;flex:none;border-bottom:0;border-right:3px solid var(--ink)}
+  .s-comic .meta{justify-content:center;padding:10px 14px}
   .s-comic .meta{padding:12px 12px 14px}
-  .s-comic .meta b{font-size:17px}
-  .s-comic .stamp{width:62px;height:62px;font-size:13px}
+  .s-comic .meta b{font-size:16px}
+  .s-comic .ep{font-size:12px;padding:3px 9px;top:8px;left:8px}
+  .s-dots{display:none}
   .s-notify{padding:22px 20px 22px;flex-direction:column;align-items:stretch}
   .s-notify > img{display:none}
   .s-notify input{width:100%}
@@ -553,16 +575,11 @@ a{color:var(--ink);text-decoration:none}
         <div class="s-head">
           <span class="s-eyebrow" style="background:var(--pink)">COMICS</span>
           <h2 class="s-h2">벌꿀오소리 만화</h2>
-          <p class="s-lead">화가 나는 순간과 그걸 푸는 순간을 담은 짧은 일상툰. 곧 연재를 시작해요.</p>
+          <p class="s-lead">화가 나는 순간과 그걸 푸는 순간을 담은 짧은 일상툰. 한 편에 1분이면 충분해요.</p>
         </div>
-        <a href="#comics" style="font-family:var(--display);font-size:19px;border-bottom:3px solid var(--ink);padding:8px 2px">전체 보기 →</a>
+        <button class="s-btn s-btn-honey" type="button" id="comic-first">1화부터 보기</button>
       </div>
-      <div class="s-comics">
-        <a class="s-comic" href="#comics"><span class="pic"><img src="img/think.webp" alt=""><span class="ep first">EP.01</span></span><span class="meta"><b>[만화 제목]</b><span>[연재일] · [한 줄 소개]</span></span></a>
-        <a class="s-comic" href="#comics"><span class="pic"><img src="img/pigdesk.webp" alt=""><span class="ep">EP.02</span><span class="stamp">연재<br>예정</span></span><span class="meta"><b>[만화 제목]</b><span>[연재일] · [한 줄 소개]</span></span></a>
-        <a class="s-comic" href="#comics"><span class="pic"><img src="img/hamster.webp" alt=""><span class="ep">EP.03</span><span class="stamp" style="transform:rotate(9deg)">연재<br>예정</span></span><span class="meta"><b>[만화 제목]</b><span>[연재일] · [한 줄 소개]</span></span></a>
-        <a class="s-comic" href="#comics"><span class="pic"><img src="img/room.webp" alt=""><span class="ep">EP.04</span><span class="stamp" style="transform:rotate(-6deg)">연재<br>예정</span></span><span class="meta"><b>[만화 제목]</b><span>[연재일] · [한 줄 소개]</span></span></a>
-      </div>
+      <div class="s-comics" id="comic-list"></div>
     </div>
   </section>
 
@@ -632,6 +649,20 @@ a{color:var(--ink);text-decoration:none}
   </div>
 </footer>
 
+<div class="s-viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+  <div class="s-vtop">
+    <div><small id="viewer-ep"></small><b id="viewer-title"></b></div>
+    <button class="s-vclose" type="button" id="viewer-close" aria-label="만화 닫기"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#FFFDF7" stroke-width="3" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="s-track2" id="viewer-track" tabindex="0" aria-label="만화 페이지, 옆으로 넘겨 보세요"></div>
+  <div class="s-vbot">
+    <button class="s-vnav" type="button" id="viewer-prev" aria-label="이전 페이지"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="#23221E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="s-dots" id="viewer-dots" aria-hidden="true"></div>
+    <span class="s-vcount" id="viewer-count" aria-live="polite"></span>
+    <button class="s-vnav" type="button" id="viewer-next" aria-label="다음 페이지"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="#23221E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+</div>
+
 <script src="data.js"></script>
 <script>
 /* ---------- site: open at the top (or at the #section in the link), never somewhere else ---------- */
@@ -689,6 +720,94 @@ a{color:var(--ink);text-decoration:none}
   document.getElementById('anim-play').onclick = function () { shade.hidden = true; wait.hidden = false; };
   document.getElementById('anim-back').onclick = function () { wait.hidden = true; shade.hidden = false; };
 
+})();
+</script>
+<script>
+/* ---------- comics: episode list + swipe viewer ---------- */
+(function () {
+  var C = (window.HB_DATA || {}).comics || [];
+  var list = document.getElementById('comic-list');
+  var V = document.getElementById('viewer'), track = document.getElementById('viewer-track');
+  var dots = document.getElementById('viewer-dots'), count = document.getElementById('viewer-count');
+  var prev = document.getElementById('viewer-prev'), next = document.getElementById('viewer-next');
+  var cur = null, idx = 0, opener = null;
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function byNo(n) { for (var i = 0; i < C.length; i++) if (C[i].no === n) return C[i]; return null; }
+  function src(n, p) { return 'comics/ep' + n + '/' + p + '.webp'; }
+
+  list.innerHTML = C.map(function (c) {
+    return '<button class="s-comic" type="button" id="comic-' + c.no + '" data-no="' + c.no + '">' +
+      '<span class="pic"><img src="comics/ep' + c.no + '/thumb.webp" alt="" loading="lazy"><span class="ep">' + c.no + '화</span></span>' +
+      '<span class="meta"><b>' + esc(c.title) + '</b><span>' + c.pages + '페이지 · 옆으로 넘겨 보기</span></span></button>';
+  }).join('');
+  Array.prototype.forEach.call(list.querySelectorAll('.s-comic'), function (b) {
+    b.onclick = function () { open(+b.dataset.no, b); };
+  });
+  document.getElementById('comic-first').onclick = function () { open(C.length ? C[0].no : 1, this); };
+
+  function slides() { return track.querySelectorAll('.s-slide'); }
+  function update() {
+    var n = slides().length;
+    idx = Math.max(0, Math.min(n - 1, Math.round(track.scrollLeft / Math.max(1, track.clientWidth))));
+    var atEnd = idx >= cur.pages;
+    count.textContent = atEnd ? '끝' : (idx + 1) + ' / ' + cur.pages;
+    Array.prototype.forEach.call(dots.children, function (d, i) { d.classList.toggle('on', i === idx); });
+    prev.disabled = idx === 0;
+    next.disabled = idx >= n - 1;
+  }
+  function go(i) { track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }); }
+
+  function open(no, from) {
+    cur = byNo(no); if (!cur) return;
+    opener = from || opener;
+    var i = C.indexOf(cur), nxt = C[i + 1];
+    var html = '';
+    for (var p = 1; p <= cur.pages; p++) {
+      html += '<div class="s-slide"><img src="' + src(cur.no, p) + '" alt="' + cur.no + '화 ' + esc(cur.title) + ' ' + p + '페이지" ' + (p <= 2 ? '' : 'loading="lazy"') + ' width="1200" height="1320"></div>';
+    }
+    html += '<div class="s-slide end"><span class="s-hand" style="font-size:26px">' + cur.no + '화 끝!</span>' +
+      (nxt ? '<p style="margin:0;color:#D9D3C4">다음 이야기: ' + esc(nxt.title) + '</p><button class="s-btn s-btn-honey" type="button" data-next="' + nxt.no + '">' + nxt.no + '화 보기 →</button>'
+           : '<p style="margin:0;color:#D9D3C4">지금까지 올라온 만화를 다 봤어요.</p><a class="s-btn s-btn-honey" href="#hb-game" data-close>나의 화 성향 테스트 하기</a>') +
+      '<button class="s-btn" type="button" data-close>목록으로</button></div>';
+    track.innerHTML = html;
+    dots.innerHTML = new Array(cur.pages + 1).join('<i></i>');
+    document.getElementById('viewer-ep').textContent = cur.no + '화';
+    document.getElementById('viewer-title').textContent = cur.title;
+    Array.prototype.forEach.call(track.querySelectorAll('[data-next]'), function (b) { b.onclick = function () { open(+b.dataset.next); }; });
+    Array.prototype.forEach.call(track.querySelectorAll('[data-close]'), function (b) { b.addEventListener('click', close); });
+    V.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    track.scrollLeft = 0;
+    update();
+    try { history.replaceState(null, '', '#comic-' + cur.no); } catch (e) {}
+    try { track.focus({ preventScroll: true }); } catch (e) {}
+  }
+  function close() {
+    if (V.hidden) return;
+    V.hidden = true;
+    document.documentElement.style.overflow = '';
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    if (opener && opener.focus) try { opener.focus({ preventScroll: true }); } catch (e) {}
+  }
+  track.addEventListener('scroll', function () { if (cur) update(); }, { passive: true });
+  prev.onclick = function () { go(idx - 1); };
+  next.onclick = function () { go(idx + 1); };
+  document.getElementById('viewer-close').onclick = close;
+  document.addEventListener('keydown', function (e) {
+    if (V.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') { e.preventDefault(); go(idx + 1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx - 1); }
+  });
+  window.addEventListener('resize', function () { if (!V.hidden) track.scrollLeft = idx * track.clientWidth; });
+
+  // a shared link like …/#comic-3 opens that episode
+  function fromHash() {
+    var m = /^#comic-(\d+)$/.exec(location.hash);
+    if (m && byNo(+m[1]) && (V.hidden || !cur || cur.no !== +m[1])) open(+m[1], document.getElementById('comic-' + m[1]));
+  }
+  if (document.readyState === 'complete') fromHash(); else window.addEventListener('load', fromHash);
+  window.addEventListener('hashchange', fromHash);
 })();
 </script>
 <script>

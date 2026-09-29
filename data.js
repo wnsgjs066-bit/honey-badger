@@ -1,5 +1,6 @@
 /* 벌꿀오소리 — 사이트 데이터
    test : 나의 화 성향 테스트 (문항, 유형별 결과)
+   comics: 만화 에피소드 목록
    cards: 홈페이지 '오늘의 위로 카드' 묶음
    문구를 바꾸려면 이 파일만 고치면 됩니다.
 
@@ -79,6 +80,20 @@ window.HB_DATA = {
       }
     }
   },
+
+  /* 만화: 에피소드별 제목과 페이지 수. 그림은 comics/ep번호/1.webp, 2.webp … (목록 썸네일은 thumb.webp)
+     5·6화 제목은 원고에 적힌 제목이고, 나머지는 내용을 보고 붙인 임시 제목이에요. 자유롭게 바꾸세요. */
+  comics: [
+    { no: 1, title: '새 취미가 생긴 후', pages: 7 },
+    { no: 2, title: '새로 이사 온 이웃', pages: 7 },
+    { no: 3, title: '새 옷 입은 비 오는 날', pages: 7 },
+    { no: 4, title: '지각한 아침', pages: 7 },
+    { no: 5, title: '예의는 개나 줘버린 너에게', pages: 7 },
+    { no: 6, title: '싸울 가치도 없는 대상', pages: 6 },
+    { no: 7, title: '메뉴를 가리켰을 뿐인데', pages: 6 },
+    { no: 8, title: '기다리던 캠핑 날', pages: 7 },
+    { no: 9, title: '마트에서 생긴 일', pages: 6 }
+  ],
 
   cards: [
     { key: 'skin',  title: '알아채기 카드', msg: '“아, 나 지금 화났구나.” 그걸 알아챈 순간부터 화는 풀리기 시작해.', img: 'surprise' },
