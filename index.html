@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="벌꿀오소리 휴(Hue)의 1분 화 성향 테스트와 일상툰. 화가 나는 건 당연해, 잘 풀면 돼.">
+<meta name="description" content="벌꿀오소리 휴(Hue)의 1분 화 성향 테스트, 일상툰, 애니메이션. 화가 나는 건 당연해, 잘 풀면 돼.">
 <meta property="og:title" content="벌꿀오소리 휴(Hue) · 화가 나는 건 당연해. 잘 풀면 돼.">
-<meta property="og:description" content="벌꿀오소리 휴(Hue)의 1분 화 성향 테스트와 일상툰. 화가 나는 건 당연해, 잘 풀면 돼.">
+<meta property="og:description" content="벌꿀오소리 휴(Hue)의 1분 화 성향 테스트, 일상툰, 애니메이션. 화가 나는 건 당연해, 잘 풀면 돼.">
 <meta property="og:image" content="https://wnsgjs066-bit.github.io/honey-badger/img/sticker-surprise.webp">
 <meta name="theme-color" content="#FBF3E1">
 <link rel="icon" href="img/sticker-surprise.webp" type="image/webp">
@@ -141,27 +141,22 @@ a{color:var(--ink);text-decoration:none}
 /* animation */
 .s-dark{background-color:var(--ink);background-image:repeating-linear-gradient(0deg,rgba(255,253,247,.035) 0 2px,transparent 2px 14px);color:var(--card)}
 .s-dark .s-lead{color:#D9D3C4}
-.s-anim{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:28px;margin-top:40px;align-items:start}
-.s-player{position:relative;aspect-ratio:16/9;border:3px solid var(--card);border-radius:24px;overflow:hidden;background:#000;box-shadow:8px 8px 0 var(--honey)}
-.s-film{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.s-film img{width:100%;height:100%;object-fit:cover;border-right:3px solid var(--ink)}
-.s-shade{position:absolute;inset:0;background:rgba(35,34,30,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px 16px 70px;text-align:center}
-.s-play{width:clamp(76px,10vw,112px);height:clamp(76px,10vw,112px);border-radius:50%;background:var(--honey);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--card);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s}
-.s-play:hover{transform:scale(1.06)}
-.s-shade b{font-family:var(--display);font-weight:400;font-size:clamp(22px,3vw,32px)}
-.s-shade small{font-size:15px;color:#D9D3C4}
-.s-bar{position:absolute;left:0;right:0;bottom:0;height:62px;display:flex;align-items:center;gap:14px;padding:0 18px;background:rgba(35,34,30,.92);border-top:2px solid var(--ink-2);font-family:var(--display);font-size:14px;color:#D9D3C4}
-.s-bar .track{flex:1;height:9px;border-radius:999px;background:var(--ink-2);position:relative}
-.s-bar .track i{position:absolute;left:-2px;top:-6px;width:21px;height:21px;border-radius:50%;background:var(--honey);border:3px solid var(--card)}
-.s-eps{display:flex;flex-direction:column;gap:12px}
+.s-anim{display:grid;grid-template-columns:380px minmax(0,1fr);gap:clamp(28px,5vw,64px);margin-top:40px;align-items:center}
+.s-reel{position:relative;width:100%;max-width:380px;aspect-ratio:406/720;border:3px solid var(--card);border-radius:26px;overflow:hidden;background:#000;box-shadow:8px 8px 0 var(--honey)}
+.s-reel video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+.s-anim-info{display:flex;flex-direction:column;gap:14px;align-items:flex-start;max-width:520px}
+.s-epno{font-family:var(--display);font-size:14px;letter-spacing:.12em;color:var(--honey)}
+.s-anim-info h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(40px,6vw,64px);line-height:1.05}
+.s-anim-info p{margin:0;font-size:18px;line-height:1.6;color:#D9D3C4}
+.s-eps{display:flex;flex-direction:column;gap:12px;width:100%;margin-top:10px}
 .s-ep{display:flex;gap:14px;align-items:center;padding:11px;border:2.5px solid var(--ink-2);border-radius:18px;background:#2F2E29;color:var(--card)}
 .s-ep.now{border-color:var(--honey)}
-.s-ep img{width:78px;height:78px;border-radius:12px;object-fit:cover;border:2.5px solid var(--card);flex:none}
-.s-ep:not(.now) img{opacity:.6;border-color:var(--ink-2)}
+.s-ep img{width:52px;height:84px;border-radius:10px;object-fit:cover;border:2.5px solid var(--card);flex:none}
+.s-ep .soon-ico{width:52px;height:84px;border-radius:10px;border:2.5px dashed #8F887A;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:26px;color:#8F887A;flex:none}
 .s-ep small{display:block;font-family:var(--display);font-size:13px;color:var(--honey)}
-.s-ep:not(.now) small{color:#B9B2A2}
+.s-ep.soon small{color:#B9B2A2}
 .s-ep b{display:block;font-family:var(--display);font-weight:400;font-size:18px}
-.s-ep span{font-size:14px;color:#B9B2A2}
+.s-ep span span{font-size:14px;color:#B9B2A2}
 
 /* comics */
 .s-comics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
@@ -269,14 +264,15 @@ a{color:var(--ink);text-decoration:none}
   .s-hero .s-wrap{grid-template-columns:minmax(0,1fr) 440px;gap:36px;align-items:start}
 }
 @media (max-width:900px){
+  .s-anim{grid-template-columns:minmax(0,1fr);justify-items:center}
+  .s-reel{max-width:360px}
+  .s-anim-info{max-width:560px;width:100%}
   .s-hero .s-wrap{grid-template-columns:minmax(0,1fr);padding-block:36px 72px}
   .s-facts,.s-cta,.s-point{display:none}
   .s-copy{gap:16px}
   .s-console{max-width:520px;width:100%;margin:0 auto}
 }
 @media (max-width:1080px){
-  .s-anim{grid-template-columns:minmax(0,1fr)}
-  .s-eps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
   .s-comics{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
   .s-bgrid,.s-bgrid2{grid-template-columns:minmax(0,1fr)}
   .s-pig{display:none}
@@ -302,7 +298,6 @@ a{color:var(--ink);text-decoration:none}
   .s-sticker.a{display:none}
   #hb-game{height:auto;overflow:visible;border-radius:16px}
   #hb-game .hud{top:calc(env(safe-area-inset-top,0px) + var(--nav-h))}
-  .s-eps{grid-template-columns:minmax(0,1fr)}
   .s-comics{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:28px}
   .s-comic{flex-direction:row;align-items:stretch;border-radius:18px;box-shadow:4px 4px 0 var(--ink)}
   .s-comic:hover{transform:none;box-shadow:4px 4px 0 var(--ink)}
@@ -320,8 +315,6 @@ a{color:var(--ink);text-decoration:none}
   .s-cast{grid-template-columns:repeat(2,minmax(0,1fr))}
   .s-foot nav{gap:40px}
   .s-foot .walker{height:100px;top:-98px}
-  .s-bar .time{display:none}
-  .s-anim .s-player{aspect-ratio:4/3}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -564,19 +557,18 @@ a{color:var(--ink);text-decoration:none}
         <span class="s-hand" style="font-size:23px;color:var(--honey);transform:rotate(-3deg)">소리 켜고 보면 더 좋아</span>
       </div>
       <div class="s-anim">
-        <div class="s-player">
-          <div class="s-film"><img src="img/speed.webp" alt=""><img src="img/surprise.webp" alt=""><img src="img/swim.webp" alt=""><img src="img/stripe.webp" alt="" style="border-right:0"></div>
-          <div class="s-shade" id="anim-shade">
-            <button class="s-play" id="anim-play" type="button" aria-label="애니메이션 재생"><svg width="40" height="40" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="#23221E"/></svg></button>
-            <b>[애니메이션 제목]</b><small>EP.01 · [러닝타임]</small>
-          </div>
-          <div class="s-shade" id="anim-wait" hidden><span class="s-bubble" style="color:var(--ink)">재생 준비 중이야. 잠깐 한숨 자고 올게.</span><small style="margin-top:8px">[영상 연결 예정]</small><button class="s-btn" id="anim-back" type="button" style="min-height:44px;font-size:15px;padding:8px 18px">돌아가기</button></div>
-          <div class="s-bar"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="#FFFDF7"/></svg><span class="time">00:00 / [00:00]</span><span class="track"><i></i></span></div>
+        <div class="s-reel">
+          <video id="anim-video" src="anim/jinsang.mp4" poster="anim/jinsang-poster.webp" controls playsinline preload="metadata" width="406" height="720" aria-label="애니메이션 진상대처법"></video>
         </div>
-        <div class="s-eps">
-          <a class="s-ep now" href="#animation"><img src="img/swim.webp" alt=""><span><small>EP.01 · 지금 보는 중</small><b>[에피소드 제목]</b><span>[러닝타임] · [공개일]</span></span></a>
-          <a class="s-ep" href="#animation"><img src="img/desk.webp" alt=""><span><small>EP.02 · 공개 예정</small><b>[에피소드 제목]</b><span>[공개일]</span></span></a>
-          <a class="s-ep" href="#animation"><img src="img/think.webp" alt=""><span><small>EP.03 · 공개 예정</small><b>[에피소드 제목]</b><span>[공개일]</span></span></a>
+        <div class="s-anim-info">
+          <span class="s-epno">EP.01 · 1분</span>
+          <h3>진상대처법</h3>
+          <p>진상을 만났을 때 어떻게 해야 할까? 휴가 칠판 앞에서 차근차근 알려 줘요.</p>
+          <button class="s-btn s-btn-honey" type="button" id="anim-play"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="#23221E"/></svg>재생하기</button>
+          <div class="s-eps">
+            <span class="s-ep now"><img src="anim/jinsang-thumb.webp" alt=""><span><small>EP.01 · 지금 보는 중</small><b>진상대처법</b><span>1분 1초</span></span></span>
+            <span class="s-ep soon"><span class="soon-ico" aria-hidden="true">+</span><span><small>EP.02</small><b>다음 이야기 준비 중</b><span>곧 올라와요</span></span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -731,9 +723,11 @@ a{color:var(--ink);text-decoration:none}
   }
   deal();
 
-  var shade = document.getElementById('anim-shade'), wait = document.getElementById('anim-wait');
-  document.getElementById('anim-play').onclick = function () { shade.hidden = true; wait.hidden = false; };
-  document.getElementById('anim-back').onclick = function () { wait.hidden = true; shade.hidden = false; };
+  var vid = document.getElementById('anim-video');
+  document.getElementById('anim-play').onclick = function () {
+    try { vid.scrollIntoView({ block: 'center' }); } catch (e) {}
+    var p = vid.play(); if (p && p.catch) p.catch(function () {});
+  };
 
 })();
 </script>
