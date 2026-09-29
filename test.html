@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="8문항, 약 1분. 나는 꿀단지형일까, 저금통형일까? 벌꿀오소리와 알아보는 나의 화 성향 테스트.">
-<meta property="og:title" content="벌꿀오소리 · 화가 나는 건 당연해. 잘 풀면 돼.">
-<meta property="og:description" content="8문항, 약 1분. 나는 꿀단지형일까, 저금통형일까? 벌꿀오소리와 알아보는 나의 화 성향 테스트.">
+<meta name="description" content="8문항, 약 1분. 벌꿀오소리 휴(Hue)가 알려 주는 나의 화 성향. 나는 꿀단지형일까, 저금통형일까?">
+<meta property="og:title" content="벌꿀오소리 휴(Hue) · 화가 나는 건 당연해. 잘 풀면 돼.">
+<meta property="og:description" content="8문항, 약 1분. 벌꿀오소리 휴(Hue)가 알려 주는 나의 화 성향. 나는 꿀단지형일까, 저금통형일까?">
 <meta property="og:image" content="https://wnsgjs066-bit.github.io/honey-badger/img/sticker-surprise.webp">
 <meta name="theme-color" content="#FBF3E1">
 <link rel="icon" href="img/sticker-surprise.webp" type="image/webp">
-<title>나의 화 성향 테스트</title>
+<title>휴의 화 성향 테스트</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap">
@@ -162,7 +162,7 @@ p{margin:0}
   <!-- INTRO -->
   <section class="screen" id="scr-intro">
     <div class="panel intro">
-      <span class="eyebrow">벌꿀오소리 · 약 1분</span>
+      <span class="eyebrow">벌꿀오소리 휴(Hue) · 약 1분</span>
       <h1>나의 <span class="mk">화 성향</span><br>테스트</h1>
       <p class="muted" id="intro-text"></p>
       <button class="btn btn-dark btn-block go" id="btn-go" type="button">테스트 시작하기 <span class="go-sub">8문항 · 약 1분</span></button>
@@ -194,7 +194,7 @@ p{margin:0}
 
   <!-- LOADING -->
   <section class="screen" id="scr-load" hidden>
-    <div class="loading" aria-live="polite"><img src="img/sticker-walk.webp" alt=""><p>벌꿀오소리가 분석 중…</p><span class="hand muted" style="font-size:18px">굴을 파는 중이야, 잠깐만</span></div>
+    <div class="loading" aria-live="polite"><img src="img/sticker-walk.webp" alt=""><p>휴가 분석 중…</p><span class="hand muted" style="font-size:18px">굴을 파는 중이야, 잠깐만</span></div>
   </section>
 
   <!-- RESULT -->
@@ -313,7 +313,7 @@ p{margin:0}
       '<section class="panel sec"><h3>이런 편이에요</h3><ul class="list traits">' + t.traits.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></section>' +
       '<section class="panel sec"><h3>앞으로 이렇게 풀어 봐</h3><ul class="list">' + t.tips.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
       '<span class="eyebrow">나랑 잘 맞는 화 푸는 법</span><div class="ways">' + t.ways.map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join('') + '</div></section>' +
-      '<article class="panel praise"><div class="in"><span class="seal">칭찬 카드</span><h3>' + esc(t.praise.title) + '</h3><p>' + esc(t.praise.msg) + '</p><span class="by">— 벌꿀오소리</span></div></article>' +
+      '<article class="panel praise"><div class="in"><span class="seal">칭찬 카드</span><h3>' + esc(t.praise.title) + '</h3><p>' + esc(t.praise.msg) + '</p><span class="by">— 휴</span></div></article>' +
       '<section class="panel sec"><h3>다른 유형도 보기</h3><div class="others">' + ORDER.map(function (k) {
         var o = T.types[k];
         return '<button type="button" data-k="' + k + '" class="' + (k === mine.key ? 'me' : '') + '"><i style="background:' + o.color + '"></i><span><b style="font-family:var(--display);font-weight:400">' + esc(o.name) + '</b>' + (k === mine.key ? ' · 나' : '') + '<br>' + esc(o.tag) + '</span></button>';
@@ -327,7 +327,7 @@ p{margin:0}
       Array.prototype.forEach.call(document.querySelectorAll('#scr-res .meter i'), function (i) { i.style.width = i.dataset.w + '%'; });
     }); });
     var mt = T.types[mine.key], mp = pct(mine.s);
-    var share = '나의 화 성향: ' + mt.name + ' (' + mt.tag + ')\n참는 힘 ' + mp.hold + '% · 터뜨리는 힘 ' + mp.burst + '% · 푸는 힘 ' + mp.release + '%\n“' + mt.praise.msg + '”\n화가 나는 건 당연해. 잘 풀면 돼.\n' + SITE;
+    var share = '휴(Hue)가 알려 준 나의 화 성향: ' + mt.name + ' (' + mt.tag + ')\n참는 힘 ' + mp.hold + '% · 터뜨리는 힘 ' + mp.burst + '% · 푸는 힘 ' + mp.release + '%\n“' + mt.praise.msg + '”\n화가 나는 건 당연해. 잘 풀면 돼.\n' + SITE;
     $('#btn-copy').onclick = function () {
       var b = this;
       var fallback = function () { var box = $('#copybox'); box.hidden = false; box.value = share; box.focus(); box.select(); b.textContent = '아래 글을 길게 눌러 복사하세요'; };
