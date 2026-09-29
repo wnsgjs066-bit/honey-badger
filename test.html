@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="8문항, 약 1분. 나는 꿀단지형일까, 저금통형일까? 벌꿀오소리와 알아보는 나의 화 성향 테스트.">
+<meta property="og:title" content="벌꿀오소리 · 화가 나는 건 당연해. 잘 풀면 돼.">
+<meta property="og:description" content="8문항, 약 1분. 나는 꿀단지형일까, 저금통형일까? 벌꿀오소리와 알아보는 나의 화 성향 테스트.">
+<meta property="og:image" content="https://wnsgjs066-bit.github.io/honey-badger/img/sticker-surprise.webp">
+<meta name="theme-color" content="#FBF3E1">
+<link rel="icon" href="img/sticker-surprise.webp" type="image/webp">
+<title>나의 화 성향 테스트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap">
+<style>
+/* One committed look: the homepage's grid-paper world. Single theme by choice, every colour set explicitly. */
+:root{
+  --ink:#23221E; --ink-2:#4A4740; --ink-3:#6B665B;
+  --paper:#FBF3E1; --grid:#EFE3C6; --card:#FFFDF7; --mane:#ECEBE7;
+  --honey:#F2B33D; --honey-2:#FBE3A6; --sky:#BFE0F3; --sky-2:#8CBEDA;
+  --grass:#619D50; --pink:#F2D4DC; --coral:#EE8470; --red:#D9572E;
+  --display:'Jua','Gowun Dodum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --hand:'Gaegu','Jua','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --body:'Gowun Dodum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  color-scheme: light;
+}
+html,body{height:100%}
+body{
+  margin:0; color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.55;
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1.5px,transparent 1.5px),linear-gradient(90deg,var(--grid) 1.5px,transparent 1.5px);
+  background-size:32px 32px;
+  -webkit-font-smoothing:antialiased; -webkit-tap-highlight-color:transparent;
+  word-break:keep-all; overflow-wrap:anywhere;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+button{font:inherit;color:inherit;touch-action:manipulation}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--honey);outline-offset:3px}
+
+.app{max-width:480px;margin:0 auto;min-height:100%;padding:16px 16px 28px;display:flex;flex-direction:column;gap:16px;position:relative}
+.screen{display:flex;flex-direction:column;gap:16px;flex:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px 22px;
+  font-family:var(--display);font-size:19px;line-height:1.2;border:3px solid var(--ink);border-radius:999px;background:var(--card);
+  box-shadow:4px 4px 0 var(--ink);cursor:pointer;transition:transform .12s,box-shadow .12s;text-align:center;text-decoration:none;color:var(--ink)}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn-dark{background:var(--ink);color:var(--card);box-shadow:4px 4px 0 var(--honey)}
+.btn-dark:hover{box-shadow:5px 5px 0 var(--honey)}
+.btn-honey{background:var(--honey)}
+.btn-block{width:100%}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row>.btn{flex:1 1 140px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-size:13px;line-height:1;padding:6px 11px;border:2px solid var(--ink);border-radius:999px;background:var(--card);white-space:nowrap}
+.panel{background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:5px 5px 0 var(--ink)}
+.eyebrow{font-family:var(--display);font-size:13px;letter-spacing:.14em;color:var(--ink-3)}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;line-height:1.15}
+p{margin:0}
+.hand{font-family:var(--hand);font-weight:700}
+.muted{color:var(--ink-3)}
+@keyframes rise{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* intro */
+.intro{position:relative;padding:22px 20px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.intro h1{font-size:clamp(34px,10vw,50px);letter-spacing:-.01em}
+.intro h1 .mk{background:linear-gradient(transparent 58%,var(--honey) 58%,var(--honey) 92%,transparent 92%)}
+.intro-art{position:relative;height:190px;border:3px solid var(--ink);border-radius:18px;background:var(--sky-2);overflow:hidden}
+.intro-art .ground{position:absolute;left:0;right:0;bottom:0;height:46px;background:var(--grass);border-top:3px solid var(--ink)}
+.intro-art img{position:absolute;bottom:30px;height:140px}
+.intro-art .a{left:12%;transform-origin:50% 100%;animation:waddle 1s ease-in-out infinite}
+.intro-art .b{right:10%;height:128px}
+.intro-art .bubble{position:absolute;left:50%;top:16px;transform:translateX(-50%)}
+@keyframes waddle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) translateY(-4px)}}
+.bubble{position:relative;display:inline-block;background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:7px 14px;font-family:var(--hand);font-weight:700;font-size:18px;line-height:1.2;white-space:nowrap}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fact{border:2.5px solid var(--ink);border-radius:14px;padding:8px 6px;background:var(--paper);text-align:center}
+.fact b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(16px,4.6vw,20px);line-height:1.1}
+.fact span{font-size:12px;color:var(--ink-3)}
+.types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.types span{display:flex;align-items:center;gap:8px;padding:8px 10px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);font-size:14px;line-height:1.25}
+.types i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);flex:none}
+
+/* question */
+.qtop{display:flex;align-items:center;gap:12px}
+.qtop .back{min-height:44px;padding:8px 14px;font-size:15px;box-shadow:3px 3px 0 var(--ink)}
+.progress{flex:1;height:16px;border:2.5px solid var(--ink);border-radius:999px;background:var(--card);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--honey);border-radius:999px;transition:width .35s ease}
+.qcount{font-family:var(--display);font-size:17px;font-variant-numeric:tabular-nums;min-width:44px;text-align:right}
+.qcard{overflow:hidden;animation:rise .3s ease both}
+.qcard .pic{height:clamp(130px,24vh,190px);border-bottom:3px solid var(--ink);background:var(--mane)}
+.qcard .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.qcard .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:14px}
+.qcard h2{font-size:clamp(21px,6vw,25px);line-height:1.3}
+.answers{display:grid;gap:10px}
+.ans{display:flex;align-items:center;gap:12px;width:100%;min-height:60px;padding:11px 14px;text-align:left;background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .1s,box-shadow .1s,background .15s;font-size:16.5px;line-height:1.35}
+.ans:hover{background:#FFF7E4}
+.ans:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.ans b{flex:none;width:30px;height:30px;border-radius:50%;border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:400;font-size:15px;background:var(--card)}
+.ans.picked{background:var(--honey-2)}
+.ans.picked b{background:var(--honey)}
+
+/* loading */
+.loading{flex:1;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center}
+.loading img{height:150px;animation:dig .5s ease-in-out infinite alternate}
+@keyframes dig{to{transform:translateY(8px) rotate(3deg)}}
+.loading p{font-family:var(--display);font-size:22px}
+
+/* result */
+.res-hero{overflow:hidden;animation:rise .4s ease both}
+.res-hero .pic{position:relative;height:210px;border-bottom:3px solid var(--ink);background:var(--mane)}
+.res-hero .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.res-hero .pic .chip{position:absolute;left:12px;top:12px;background:var(--ink);color:var(--card)}
+.res-hero .in{padding:18px;display:flex;flex-direction:column;gap:10px}
+.res-hero h1{font-size:clamp(38px,11vw,50px);line-height:1}
+.res-hero .tag{align-self:flex-start;font-family:var(--display);font-size:17px;padding:6px 14px;border:2.5px solid var(--ink);border-radius:999px}
+.res-hero .sum{font-family:var(--hand);font-weight:700;font-size:21px;line-height:1.4}
+.sec{padding:18px;display:flex;flex-direction:column;gap:12px}
+.sec h3{font-size:20px}
+.meter{display:grid;grid-template-columns:max-content minmax(0,1fr) 44px;align-items:center;gap:10px}
+.meter label{font-family:var(--display);font-size:15px;white-space:nowrap;min-width:64px}
+.meter .bar{height:16px;border:2.5px solid var(--ink);border-radius:999px;background:var(--paper);overflow:hidden}
+.meter .bar i{display:block;height:100%;border-radius:999px;transition:width .8s cubic-bezier(.3,1.2,.5,1)}
+.meter output{font-family:var(--display);font-size:15px;text-align:right;font-variant-numeric:tabular-nums}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.list li{position:relative;padding:10px 12px 10px 40px;background:var(--paper);border:2px solid var(--ink);border-radius:14px;line-height:1.45}
+.list li::before{content:'';position:absolute;left:13px;top:15px;width:14px;height:14px;border-radius:50%;border:2.5px solid var(--ink);background:var(--honey)}
+.list.traits li::before{background:var(--card)}
+.ways{display:flex;gap:8px;flex-wrap:wrap}
+.ways .chip{font-size:15px;padding:8px 14px;background:#CDE3B8}
+.praise{position:relative;overflow:hidden;animation:flipin .7s .15s cubic-bezier(.3,1.3,.5,1) both;background-color:var(--paper);background-image:linear-gradient(var(--grid) 1.5px,transparent 1.5px),linear-gradient(90deg,var(--grid) 1.5px,transparent 1.5px);background-size:28px 28px}
+@keyframes flipin{from{transform:perspective(900px) rotateY(80deg);opacity:.4}to{transform:none;opacity:1}}
+.praise .in{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px}
+.praise .seal{align-self:flex-start;font-family:var(--display);font-size:13px;letter-spacing:.12em;padding:5px 12px;border:2px solid var(--ink);border-radius:999px;background:var(--honey)}
+.praise h3{font-size:24px}
+.praise p{font-family:var(--hand);font-weight:700;font-size:22px;line-height:1.4}
+.praise .by{align-self:flex-end;font-family:var(--hand);font-weight:700;font-size:18px;color:var(--ink-3)}
+.others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.others button{display:flex;align-items:center;gap:8px;min-height:48px;padding:8px 10px;border:2.5px solid var(--ink);border-radius:14px;background:var(--paper);cursor:pointer;text-align:left;font-size:14px;line-height:1.2}
+.others button i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);flex:none}
+.others button.me{background:var(--honey-2)}
+.peek{padding:10px 14px;border-radius:14px;background:var(--honey-2);border:2px solid var(--ink);display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px}
+.peek button{min-height:40px;padding:6px 14px;font-size:14px;box-shadow:2px 2px 0 var(--ink)}
+.copybox{width:100%;min-height:110px;font:inherit;font-size:14px;border:2.5px solid var(--ink);border-radius:12px;padding:10px;background:var(--card);color:var(--ink)}
+.foot{font-size:12px;color:var(--ink-3);text-align:center}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+
+<main class="app" id="app">
+
+  <!-- INTRO -->
+  <section class="screen" id="scr-intro">
+    <div class="panel intro">
+      <span class="eyebrow">벌꿀오소리 · 약 1분</span>
+      <h1>나의 <span class="mk">화 성향</span><br>테스트</h1>
+      <p class="muted" id="intro-text"></p>
+      <div class="intro-art" aria-hidden="true">
+        <span class="bubble">너는 어떤 타입이야?</span>
+        <div class="ground"></div>
+        <img class="a" src="img/sticker-walk.webp" alt="">
+        <img class="b" src="img/sticker-pig.webp" alt="">
+      </div>
+      <div class="facts">
+        <div class="fact"><b>8문항</b><span>고르기만 하면 끝</span></div>
+        <div class="fact"><b>약 1분</b><span>한 번이면 충분</span></div>
+        <div class="fact"><b>4가지</b><span>화 성향 유형</span></div>
+      </div>
+      <div class="types" id="type-list"></div>
+    </div>
+    <button class="btn btn-dark btn-block" id="btn-go" type="button">테스트 시작하기</button>
+    <p class="foot">재미로 보는 테스트예요. 진단이나 검사가 아니에요.</p>
+  </section>
+
+  <!-- QUESTION -->
+  <section class="screen" id="scr-q" hidden>
+    <div class="qtop">
+      <button class="btn back" id="btn-back" type="button" aria-label="이전 질문">이전</button>
+      <div class="progress" role="progressbar" aria-label="진행" aria-valuemin="0" aria-valuemax="8" id="prog"><i id="prog-fill"></i></div>
+      <span class="qcount" id="qcount">1 / 8</span>
+    </div>
+    <div id="qwrap"></div>
+  </section>
+
+  <!-- LOADING -->
+  <section class="screen" id="scr-load" hidden>
+    <div class="loading" aria-live="polite"><img src="img/sticker-walk.webp" alt=""><p>벌꿀오소리가 분석 중…</p><span class="hand muted" style="font-size:18px">굴을 파는 중이야, 잠깐만</span></div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="screen" id="scr-res" hidden></section>
+</main>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  'use strict';
+  var T = window.HB_DATA.test;
+  var SITE = 'https://wnsgjs066-bit.github.io/honey-badger/';
+  var ORDER = ['honey', 'bank', 'volcano', 'bomb'];
+  var answers = [];      // index of the picked answer per question
+  var idx = 0;
+  var mine = null;       // { key, s } of the player's own result
+  var locked = false;
+
+  // When embedded in the homepage the test lives in #hb-game; standalone it owns the page.
+  var GROOT = document.getElementById('hb-game') || document.body;
+  var booted = false;
+  function $(s) { return document.querySelector(s); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function img(k) { return 'img/' + k + '.webp'; }
+  function scrollTop() {
+    if (GROOT === document.body) { window.scrollTo(0, 0); return; }
+    if (!booted) return;
+    var cs = getComputedStyle(GROOT);
+    if (cs.overflowY === 'auto' || cs.overflowY === 'scroll') GROOT.scrollTop = 0;
+    var r = GROOT.getBoundingClientRect();
+    if (r.top < 0 || r.top > window.innerHeight * 0.5) GROOT.scrollIntoView({ block: 'start' });
+  }
+  function show(id) {
+    ['intro', 'q', 'load', 'res'].forEach(function (k) { $('#scr-' + k).hidden = (k !== id); });
+    scrollTop();
+  }
+
+  /* ---------- intro ---------- */
+  $('#intro-text').textContent = T.intro;
+  $('#type-list').innerHTML = ORDER.map(function (k) {
+    var t = T.types[k];
+    return '<span><i style="background:' + t.color + '"></i><span><b style="font-family:var(--display);font-weight:400">' + esc(t.name) + '</b><br>' + esc(t.tag) + '</span></span>';
+  }).join('');
+
+  /* ---------- questions ---------- */
+  function renderQ() {
+    var q = T.questions[idx], n = T.questions.length;
+    $('#qcount').textContent = (idx + 1) + ' / ' + n;
+    $('#prog-fill').style.width = (idx / n * 100) + '%';
+    $('#prog').setAttribute('aria-valuenow', idx);
+    $('#btn-back').style.visibility = idx === 0 ? 'hidden' : 'visible';
+    $('#qwrap').innerHTML = '<article class="panel qcard"><div class="pic"><img src="' + img(q.img) + '" alt=""></div><div class="body">' +
+      '<h2>' + esc(q.q) + '</h2><div class="answers">' +
+      q.a.map(function (a, i) {
+        return '<button class="ans' + (answers[idx] === i ? ' picked' : '') + '" type="button" data-i="' + i + '"><b>' + 'ABC'.charAt(i) + '</b><span>' + esc(a.t) + '</span></button>';
+      }).join('') + '</div></div></article>';
+    locked = false;
+    Array.prototype.forEach.call(document.querySelectorAll('#qwrap .ans'), function (b) {
+      b.onclick = function () { pick(+b.dataset.i, b); };
+    });
+  }
+  function pick(i, btn) {
+    if (locked) return; locked = true;
+    answers[idx] = i;
+    Array.prototype.forEach.call(document.querySelectorAll('#qwrap .ans'), function (x) { x.classList.toggle('picked', x === btn); });
+    setTimeout(function () {
+      if (idx < T.questions.length - 1) { idx++; renderQ(); }
+      else finish();
+    }, 260);
+  }
+  $('#btn-back').onclick = function () { if (idx > 0) { idx--; renderQ(); } };
+  $('#btn-go').onclick = function () { answers = []; idx = 0; mine = null; renderQ(); show('q'); };
+
+  /* ---------- scoring ---------- */
+  function score() {
+    var s = { hold: 0, burst: 0, release: 0 };
+    answers.forEach(function (ai, qi) {
+      var w = T.questions[qi].a[ai].s;
+      Object.keys(w).forEach(function (k) { s[k] += w[k]; });
+    });
+    return s;
+  }
+  function typeOf(s) {
+    if (s.release >= 5) return 'honey';
+    if (s.hold >= 3 && s.burst >= 3) return 'bomb';
+    if (s.burst > s.hold) return 'volcano';
+    if (s.hold > s.burst) return 'bank';
+    return 'bomb';
+  }
+  function pct(s) {
+    var t = s.hold + s.burst + s.release || 1;
+    var p = { hold: Math.round(s.hold / t * 100), burst: Math.round(s.burst / t * 100) };
+    p.release = 100 - p.hold - p.burst;
+    return p;
+  }
+  function finish() {
+    $('#prog-fill').style.width = '100%';
+    var s = score();
+    mine = { key: typeOf(s), s: s };
+    show('load');
+    setTimeout(function () { renderResult(mine.key, true); }, 1100);
+  }
+
+  /* ---------- result ---------- */
+  function renderResult(key, isMine) {
+    var t = T.types[key], s = mine.s, p = pct(s);
+    var meter = function (label, v, color) {
+      return '<div class="meter"><label>' + label + '</label><div class="bar" role="meter" aria-label="' + label + '" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + v + '"><i style="width:0%;background:' + color + '" data-w="' + v + '"></i></div><output>' + v + '%</output></div>';
+    };
+    var embedded = GROOT !== document.body;
+    $('#scr-res').innerHTML =
+      (isMine ? '' : '<div class="peek"><span>다른 유형을 구경하는 중이에요</span><button class="btn" type="button" id="btn-mine">내 결과로</button></div>') +
+      '<article class="panel res-hero"><div class="pic"><img src="' + img(t.img) + '" alt=""><span class="chip">' + (isMine ? '나의 화 성향은' : '화 성향 유형') + '</span></div>' +
+      '<div class="in"><h1>' + esc(t.name) + '</h1><span class="tag" style="background:' + t.color + '">' + esc(t.tag) + '</span><p class="sum">' + esc(t.summary) + '</p></div></article>' +
+      (isMine ? '<section class="panel sec"><h3>나의 화 비율</h3>' + meter('참는 힘', p.hold, 'var(--sky-2)') + meter('터뜨리는 힘', p.burst, 'var(--coral)') + meter('푸는 힘', p.release, 'var(--honey)') + '</section>' : '') +
+      '<section class="panel sec"><h3>이런 편이에요</h3><ul class="list traits">' + t.traits.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></section>' +
+      '<section class="panel sec"><h3>앞으로 이렇게 풀어 봐</h3><ul class="list">' + t.tips.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
+      '<span class="eyebrow">나랑 잘 맞는 화 푸는 법</span><div class="ways">' + t.ways.map(function (x) { return '<span class="chip">' + esc(x) + '</span>'; }).join('') + '</div></section>' +
+      '<article class="panel praise"><div class="in"><span class="seal">칭찬 카드</span><h3>' + esc(t.praise.title) + '</h3><p>' + esc(t.praise.msg) + '</p><span class="by">— 벌꿀오소리</span></div></article>' +
+      '<section class="panel sec"><h3>다른 유형도 보기</h3><div class="others">' + ORDER.map(function (k) {
+        var o = T.types[k];
+        return '<button type="button" data-k="' + k + '" class="' + (k === mine.key ? 'me' : '') + '"><i style="background:' + o.color + '"></i><span><b style="font-family:var(--display);font-weight:400">' + esc(o.name) + '</b>' + (k === mine.key ? ' · 나' : '') + '<br>' + esc(o.tag) + '</span></button>';
+      }).join('') + '</div></section>' +
+      '<button class="btn btn-honey btn-block" id="btn-copy" type="button">결과 복사하기</button>' +
+      '<textarea class="copybox" id="copybox" readonly hidden aria-label="복사할 결과"></textarea>' +
+      '<div class="row"><button class="btn btn-dark" id="btn-again" type="button">다시 하기</button><a class="btn" href="' + (embedded ? '#comfort' : 'index.html#comfort') + '">위로 카드 받기</a></div>' +
+      '<p class="foot">화가 나는 건 당연해. 잘 풀면 돼.</p>';
+    show('res');
+    requestAnimationFrame(function () { requestAnimationFrame(function () {
+      Array.prototype.forEach.call(document.querySelectorAll('#scr-res .meter i'), function (i) { i.style.width = i.dataset.w + '%'; });
+    }); });
+    var mt = T.types[mine.key], mp = pct(mine.s);
+    var share = '나의 화 성향: ' + mt.name + ' (' + mt.tag + ')\n참는 힘 ' + mp.hold + '% · 터뜨리는 힘 ' + mp.burst + '% · 푸는 힘 ' + mp.release + '%\n“' + mt.praise.msg + '”\n화가 나는 건 당연해. 잘 풀면 돼.\n' + SITE;
+    $('#btn-copy').onclick = function () {
+      var b = this;
+      var fallback = function () { var box = $('#copybox'); box.hidden = false; box.value = share; box.focus(); box.select(); b.textContent = '아래 글을 길게 눌러 복사하세요'; };
+      try { navigator.clipboard.writeText(share).then(function () { b.textContent = '복사했어요'; }, fallback); } catch (e) { fallback(); }
+    };
+    $('#btn-again').onclick = function () { answers = []; idx = 0; mine = null; show('intro'); };
+    var bm = $('#btn-mine'); if (bm) bm.onclick = function () { renderResult(mine.key, true); };
+    Array.prototype.forEach.call(document.querySelectorAll('#scr-res .others button'), function (b) {
+      b.onclick = function () { renderResult(b.dataset.k, b.dataset.k === mine.key); };
+    });
+  }
+
+  show('intro');
+  booted = true;
+
+  // test hook (no effect for visitors)
+  window.__hbt = { score: score, typeOf: typeOf, get answers() { return answers; } };
+})();
+</script>
+
+</body>
+</html>
